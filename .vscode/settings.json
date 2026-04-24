@@ -1,39 +1,37 @@
 {
   /************************** S 编辑器和文件关联设置  ****************************************/
+  "editor.playground.inlineSuggest.enabled": false,
+  "editor.suggestSelection": "first",
+  "editor.sound.enabled": false,
+  "editor.parameterHints.enabled": false,
   // 设置 Tab 键的空格数为 2
   "editor.tabSize": 2,
   // 定义特定文件后缀与语言模式的关联
   "files.associations": {
-    "*.wxss": "css",        // 将 .wxss 文件关联为 CSS 模式
-    "*.acss": "css",        // 将 .acss 文件关联为 CSS 模式
-    "*.less": "less",       // 将 .less 文件关联为 LESS 模式
-    "*.scss": "scss",       // 将 .scss 文件关联为 SCSS 模式
-    "*.vue": "vue",         // 将 .vue 文件关联为 Vue 模式
-    "*.wxml": "html",       // 将 .wxml 文件关联为 HTML 模式
-    "*.axml": "html",       // 将 .axml 文件关联为 HTML 模式
-    "*.wxs": "javascript",  // 将 .wxs 文件关联为 JavaScript 模式
-    "*.sjs": "javascript"   // 将 .sjs 文件关联为 JavaScript 模式
+    "*.wxss": "css", // 将 .wxss 文件关联为 CSS 模式
+    "*.acss": "css", // 将 .acss 文件关联为 CSS 模式
+    "*.less": "less", // 将 .less 文件关联为 LESS 模式
+    "*.scss": "scss", // 将 .scss 文件关联为 SCSS 模式
+    "*.vue": "vue", // 将 .vue 文件关联为 Vue 模式
+    "*.wxml": "html", // 将 .wxml 文件关联为 HTML 模式
+    "*.axml": "html", // 将 .axml 文件关联为 HTML 模式
+    "*.wxs": "javascript", // 将 .wxs 文件关联为 JavaScript 模式
+    "*.sjs": "javascript", // 将 .sjs 文件关联为 JavaScript 模式
   },
   // 配置 emmet 插件对特定语言的扩展支持
   "emmet.includeLanguages": {
     "wxml": "html", // 将 wxml 语法视为 HTML
-    "axml": "html"  // 将 axml 语法视为 HTML
+    "axml": "html", // 将 axml 语法视为 HTML
   },
   // 配置 emmet 语法配置文件
   "emmet.syntaxProfiles": {
     "vue-html": "html", // Vue 文件中的 HTML 部分使用 HTML 配置
-    "vue": "html",      // Vue 文件使用 HTML 配置
-    "axml": "html"      // axml 文件使用 HTML 配置
+    "vue": "html", // Vue 文件使用 HTML 配置
+    "axml": "html", // axml 文件使用 HTML 配置
   },
-  /************************** E 编辑器和文件关联设置  ****************************************/
-
-
-  /************************** S 格式化与验证设置  ****************************************/
-  // 保存时自动格式化代码、运行 eslint 和 stylelint
-  "editor.formatOnSave": true,
   // 保存时执行的代码操作
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": "explicit" // 明确地修复所有 eslint 问题
+    "source.fixAll.eslint": "explicit", // 明确地修复所有 eslint 问题
   },
   // 关闭内置的 HTML、JS 和 TS 格式化工具
   "html.format.enable": false,
@@ -48,7 +46,7 @@
     "typescriptreact",
     "javascript",
     "javascriptreact",
-    "vue"
+    "vue",
   ],
   // 防止编辑器内置 linter 与插件冲突
   "css.validate": false,
@@ -56,41 +54,60 @@
   "scss.validate": false,
   // 启用 stylelint 并关闭其他 CSS 验证器
   "stylelint.enable": true,
+  "editor.quickSuggestions": {
+    "other": true,
+    "comments": true,
+    "strings": true,
+  },
+  "editor.suggest.showSnippets": true,
+  "editor.snippetSuggestions": "top",
+  "editor.tabCompletion": "on",
   /************************** E 格式化与验证设置  ****************************************/
-
 
   /************************** S 默认格式化工具设置  ****************************************/
   // 设置特定语言的默认格式化工具
   "[html]": {
-    "editor.defaultFormatter": "dbaeumer.vscode-eslint" // 使用 prettier 格式化 HTML
+    "editor.defaultFormatter": "esbenp.prettier-vscode", // 使用 prettier 格式化 HTML
   },
   "[javascript]": {
-    "editor.defaultFormatter": "dbaeumer.vscode-eslint" // 使用 eslint 格式化 JS
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint", // 使用 eslint 格式化 JS
   },
   "[json]": {
-    "editor.defaultFormatter": "vscode.json-language-features" // 使用 VSCode 内置格式化器格式化 JSON
+    "editor.defaultFormatter": "vscode.json-language-features", // 使用 VSCode 内置格式化器格式化 JSON
   },
   "[typescript]": {
-    "editor.defaultFormatter": "dbaeumer.vscode-eslint", // 不使用默认格式化器
-    "editor.tabSize": 2 // 设置 TS 文件的 Tab 空格数
+    "editor.defaultFormatter": "esbenp.prettier-vscode", // 不使用默认格式化器
+    "editor.tabSize": 2, // 设置 TS 文件的 Tab 空格数
   },
   "[vue]": {
-    "editor.defaultFormatter": "dbaeumer.vscode-eslint" // 使用 prettier 格式化 Vue
+    "editor.defaultFormatter": "esbenp.prettier-vscode", // 不格式化
+    // "editor.defaultFormatter": "dbaeumer.vscode-eslint" // 使用 prettier 格式化 Vue
+  },
+  "[nuxt]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint", // 使用 prettier 格式化 Vue
+  },
+  "[rust]": {
+    "editor.defaultFormatter": "statiolake.vscode-rustfmt",
+    "editor.formatOnSave": true, //optional
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+  },
+  "[worktree-typescriptreact]": {
+    "editor.semanticHighlighting.enabled": false,
   },
 
   /************************** E 默认格式化工具设置  ****************************************/
 
-
   /************************** S Vetur 和 Live Server 插件设置  *********************************/
-  // 使用 Vetur 插件格式化 Vue 文件中的 HTML，其他使用 eslint 和 stylelint
-  "vetur.format.defaultFormatter.html": "prettyhtml",
-  "vetur.format.defaultFormatter.js": "none",
-  "vetur.format.defaultFormatter.ts": "none",
-  "vetur.format.defaultFormatter.less": "none",
-  "vetur.format.defaultFormatter.scss": "none",
-  "vetur.format.defaultFormatter.sass": "none",
-  "vetur.format.defaultFormatterOptions": {
-    "wrap_attributes": "aligned-multiple" // 格式化 HTML 属性时的对齐方式
+  "vetur.format.defaultFormatter.js": "vscode-typescript",
+  "vetur.validation.script": false,
+  "vetur.validation.style": false,
+  "vetur.validation.template": false,
+  "vetur.completion.scaffoldSnippetSources": {
+    "workspace": "💼",
+    "user": "🗒️",
+    "vetur": "✌",
   },
   // 微信小程序扩展配置
   "minapp-vscode.disableAutoConfig": true,
@@ -107,7 +124,7 @@
     // 代理配置
     "enable": true, // 开启代理
     "baseUri": "/api/", // 代理的基础 URI
-    "proxyUri": "http://xxx/api" // 代理的目标 URL
+    "proxyUri": "http://xxx/api", // 代理的目标 URL
   },
   /************************** E Vetur 和 Live Server 插件设置  *********************************/
 
@@ -119,7 +136,7 @@
   "terminal.integrated.defaultProfile.windows": "Command Prompt",
   "tailwind-fold.autoFold": true,
   "[scss]": {
-    "editor.defaultFormatter": "vscode.css-language-features" // 使用 VSCode 内置格式化器格式化 SCSS
+    "editor.defaultFormatter": "vscode.css-language-features", // 使用 VSCode 内置格式化器格式化 SCSS
   },
   "git.confirmSync": false, // 在同步时不进行确认
   "git.enableSmartCommit": true, // 启用智能提交
@@ -133,8 +150,6 @@
   "editor.cursorSmoothCaretAnimation": "on",
   // 设置编辑器的字体
   "editor.fontFamily": "Input Mono, monospace",
-  // 启用括号对的指引线
-  "editor.guides.bracketPairs": "active",
   // 显示行号为间隔式
   "editor.lineNumbers": "interval",
   // 渲染空白字符仅在边界，当前未启用
@@ -142,7 +157,7 @@
   // 自动检测颜色主题
   "window.autoDetectColorScheme": true,
   // 设置工作台的颜色主题
-  "workbench.colorTheme": "Vitesse Dark",
+  "workbench.colorTheme": "Vitesse Light",
   // 编辑器标签页操作的位置
   "workbench.editor.tabActionLocation": "left",
   // 设置字体抗锯齿
@@ -151,20 +166,213 @@
   "workbench.iconTheme": "vscode-icons",
   // 列表滚动时使用平滑滚动
   "workbench.list.smoothScrolling": true,
-  // 首选的深色主题
-  "workbench.preferredDarkColorTheme": "Vitesse Dark",
-  // 首选的浅色主题
-  "workbench.preferredLightColorTheme": "Vitesse Light",
   // 设置产品图标主题
   "workbench.productIconTheme": "icons-carbon",
-  // 侧边栏的位置
-  "workbench.sideBar.location": "left",
   // 启动时打开新未命名文件
   "workbench.startupEditor": "newUntitledFile",
   // 单击展开树状视图
   "workbench.tree.expandMode": "singleClick",
   // 树状视图的缩进量
-  "workbench.tree.indent": 10
+  "workbench.tree.indent": 10,
+  "vs-code-prettier-eslint.prettierLast": true,
+  "workbench.editorAssociations": {
+    "*.svg": "default",
+  },
   /************************** E 视觉效果设置  ****************************************/
 
+  /************************** S Tailwind CSS 突出显示  ****************************************/
+  "tailwindcss-highlight.languages": [
+    "html",
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "vue",
+    "php",
+    "svelte",
+  ],
+
+  // 要突出显示的实用程序列表。
+  "tailwindcss-highlight.enabledUtilities": [
+    "padding",
+    "margin",
+    "space",
+    "flex",
+    "grid",
+    "position",
+  ],
+  // 将其设为下划线而不是突出显示
+  "tailwindcss-highlight.customUtilitiesConfig": {
+    "padding": {
+      "style": {
+        "backgroundColor": "",
+        "borderWidth": "0 0 1px 0",
+        "borderStyle": "dashed",
+        "borderColor": "#fecdd3",
+        "color": "currentColor",
+      },
+    },
+    "margin": {
+      "style": {
+        "backgroundColor": "",
+        "borderWidth": "0 0 1px 0",
+        "borderStyle": "dashed",
+        "borderColor": "#9333ea",
+        "color": "currentColor",
+      },
+    },
+    "space": {
+      "style": {
+        "backgroundColor": "",
+        "borderWidth": "0 0 1px 0",
+        "borderStyle": "dashed",
+        "borderColor": "rgba(0, 120, 140, 0.6",
+        "color": "currentColor",
+      },
+    },
+
+    "flex": {
+      "style": {
+        "backgroundColor": "",
+        "borderWidth": "0 0 1px 0",
+        "borderStyle": "dashed",
+        "borderColor": "#e11d48",
+        "color": "currentColor",
+      },
+    },
+    "grid": {
+      "style": {
+        "backgroundColor": "",
+        "borderWidth": "0 0 1px 0",
+        "borderStyle": "dashed",
+        "borderColor": "#06b6d4",
+        "color": "currentColor",
+      },
+    },
+    "position": {
+      "style": {
+        "backgroundColor": "",
+        "borderWidth": "0 0 1px 0",
+        "borderStyle": "dashed",
+        "borderColor": "#22c55e",
+        "color": "currentColor",
+      },
+    },
+  },
+  "tailwindcss-highlight.customVariantsConfig": {
+    "#e11d48": ["sm", "md", "lg", "xl", "2xl"],
+    "#8b5cf6": [
+      "focus",
+      "focus-within",
+      "focus-visible",
+      "hover",
+      "active",
+      "group-hover",
+      "group-focus",
+      "group-active",
+    ],
+    "#9333ea": ["top", "bottom", "left", "right"],
+    "#06b6d4": ["grid-cols", "grid-rows"],
+    "#22c55e": ["absolute", "relative", "fixed", "sticky"],
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+  },
+  "Codegeex.License": "",
+  "explorer.confirmPasteNative": false,
+  "editor.formatOnType": true,
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  "editor.accessibilitySupport": "on",
+
+  /************************** E Tailwind CSS 突出显示  ****************************************/
+
+  /************************** S 目录排除  ****************************************/
+  // PHP
+  "intelephense.files.exclude": [
+    "**/.svn/**",
+    "**/.hg/**",
+    "**/CVS/**",
+    "**/.DS_Store/**",
+    "**/node_modules/**",
+    "**/bower_components/**",
+    "**/vendor/**/{Tests,tests}/**",
+    "**/.history/**",
+    "**/vendor/**/vendor/**",
+  ],
+  // 文件监视器（watcher），排除一些文件和目录
+  "files.watcherExclude": {
+    "**/node_modules/**": true,
+    "**/node_modules/*/**": false,
+    "**/vendor/**": true,
+  },
+  // 全局搜索功能，排除一些文件和目录
+  "search.exclude": {
+    "*.code-workspace": true,
+    "**/vendor": true,
+    "**/node_modules": true,
+  },
+  "accessibility.signalOptions.volume": 0,
+  "dynoFileUtils.confirmDelete": false,
+  "vsicons.dontShowNewVersionMessage": true,
+  "vsintellicode.modify.editor.suggestSelection": "choseToUpdateConfiguration",
+  "debug.onTaskErrors": "debugAnyway",
+  "workbench.activityBar.orientation": "vertical",
+  "workbench.editor.enablePreview": false,
+  "cursor.cpp.disabledLanguages": ["markdown"],
+  "auto-close-tag.disableOnLanguage": [],
+  "[dockercompose]": {
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2,
+    "editor.autoIndent": "advanced",
+    "editor.defaultFormatter": "redhat.vscode-yaml",
+  },
+  "[github-actions-workflow]": {
+    "editor.defaultFormatter": "redhat.vscode-yaml",
+  },
+  "accessibility.verbosity.terminal": false,
+  "window.confirmSaveUntitledWorkspace": false,
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+  },
+  "workbench.preferredDarkColorTheme": "Vitesse Dark",
+  "editor.unicodeHighlight.invisibleCharacters": false,
+  "[yaml]": {
+    "editor.defaultFormatter": "redhat.vscode-yaml",
+  },
+  "editor.unicodeHighlight.ambiguousCharacters": false,
+  "Codegeex.Local": {
+    "apiURL": "https://api.tkhub.ai/v1",
+    "useChatGLM": true,
+    "chatGLM": {
+      "apiKey": "sk-pXEapmaRCf8LWLlw9yrpV073HXsit48hYaVi4ztW86fwnEHG",
+      "model": "tkhub/qwen3.6-plus",
+    },
+    "chat": {
+      "useDefaultSystemPrompt": true,
+      "systemPrompt": "",
+      "temperature": 0.2,
+      "top_p": 0.95,
+      "max_tokens": 1024,
+      "presence_penalty": 1,
+    },
+    "completions": {
+      "useDefaultSystemPrompt": true,
+      "systemPrompt": "",
+      "temperature": 0.2,
+      "top_p": 0.95,
+      "max_tokens": 64,
+      "presence_penalty": 1,
+    },
+  },
+  "chat.agent.maxRequests": 500,
+  "Codegeex.CompletionDelay": 0.4,
+  "z-code-tools.enableDecorations": true,
+  "z-code-tools.showRightBadge": true,
+  "z-code-tools.autoRevealSettings": false,
+  "z-code-tools.accentTheme": "lilac",
+  "z-code-tools.customAccentColor": "#00f5d4",
+  "z-code-tools.customAccentColors": [],
+
+  /************************** E 目录排除  ****************************************/
 }

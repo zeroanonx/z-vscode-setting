@@ -1,0 +1,16 @@
+{
+	"Print to console": {
+		"prefix": "vue3",
+		"body": [
+			"<template>",
+			"  <div></div>",
+			"</template>",
+			"",
+			"<script setup lang='ts'>",
+			"",
+			"",
+			"</script>",
+		],
+		"description": "Log output to console"
+	}
+}
